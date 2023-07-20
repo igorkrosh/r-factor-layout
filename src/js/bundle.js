@@ -2,12 +2,12 @@ global.$ = global.jQuery = require('jquery');
 
 require('jquery-modal');
 
-//require('owl.carousel');
+require('owl.carousel');
 
-/*
+
 global.SimpleLightbox = require('simple-lightbox');
 global.SimpleLightbox.registerAsJqueryPlugin($);
-*/
+
 
 /*
 require('jquery-validation');

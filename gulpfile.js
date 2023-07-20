@@ -15,7 +15,7 @@ let path = {
         html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`],
         pug: `${sourceFolder}/pug/*.pug`,
         css: [`${sourceFolder}/scss/style.scss`, `${sourceFolder}/scss/bundle.scss`, `${sourceFolder}/scss/response.scss`],
-        js: [`${sourceFolder}/js/index.js`],
+        js: [`${sourceFolder}/js/*.js`],
         img: `${sourceFolder}/images/**/*.+(png|jpg|gif|ico|svg|webp)`,
         fonts: `${sourceFolder}/fonts/*.ttf`
     },

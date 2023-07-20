@@ -1,0 +1,69 @@
+mixin Menu()
+    -
+        let menu = [
+            {
+                title: 'Компания',
+                submenu: ['О компании', 'География применения продукции', 'Основные заказчики', 'Производственные мощности']
+            },
+            {
+                title: 'Продукция',
+                submenu: ['О компании', 'География применения продукции', 'Основные заказчики', 'Производственные мощности']
+            },
+            {
+                title: 'Применение',
+                submenu: ['О компании', 'География применения продукции', 'Основные заказчики', 'Производственные мощности']
+            },
+            {
+                title: 'Сервис',
+                submenu: ['О компании', 'География применения продукции', 'Основные заказчики', 'Производственные мощности']
+            },
+            {
+                title: 'Карьера',
+                submenu: ['О компании', 'География применения продукции', 'Основные заказчики', 'Производственные мощности']
+            },
+            {
+                title: 'Контакты',
+                submenu: []
+            }
+        ]
+    .menu-wrapper
+        each item in menu
+            .menu-item
+                a(href="#").menu-title=item.title
+                if item.submenu.length > 0
+                    .submenu
+                        each submenu in item.submenu
+                            a(href="#")=submenu
+
+header
+    a.logo
+        img(src="/assets/images/logo.png")
+    a.contacts-link(href="tel:+7 (3466) 311-926") +7 (3466) 311-926
+    a.contacts-link(href="mailto:info@r-faktor.ru") info@r-faktor.ru
+    .switch-lang-wrapper
+        a(href="").search
+            img(src="/assets/images/icons/search.png")
+        button.switch-lang RU
+            .lang-wrapper
+                a(href="#") RU
+                a(href="#") EN
+    .switch-text-size
+        button.sm A
+        button.md.active A
+        button.lg A
+    .soc-list
+        a.link(target="_black" href="#")
+            img(src="/assets/images/icons/soc/dzen.png")
+        a.link(target="_black" href="#")
+            img(src="/assets/images/icons/soc/rutube.png")
+        a.link(target="_black" href="#")
+            img(src="/assets/images/icons/soc/tg.png")
+        a.link(target="_black" href="#")
+            img(src="/assets/images/icons/soc/vk.png")
+    button.btn-menu
+        span
+    .navbar
+        +Menu()
+
+.navbar.sticky
+    +Menu()

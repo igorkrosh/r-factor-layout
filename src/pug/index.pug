@@ -9,11 +9,179 @@ html(lang="ru")
         title Document
         include core/head
     body
-        .container
-            h1 Hi from PUG! 
-            +InputRadio('name', 'test')
-            
-            +Modal('test', 'ModalTemplate')
-            a(rel="modal:open" href="#test") Modal Test
+        include core/navbar
+        section.screen.main
+            .bg-video
+                video(src="http://braintechnology.ru/upload/iblock/ab1/pfy7kyurqygkjceh9wc3ggf3uddz334q.mp4" poster="http://braintechnology.ru/upload/iblock/b91/psl2q8jni1r90k9cq92jmg1o60660bmk.png" autoplay="" muted="" loop="")
+            .content
+                h1 Проектирование и изготовление технологического оборудования для нефтесервиса
+                button.btn-video.video-link(data-video="http://braintechnology.ru/upload/iblock/ab1/pfy7kyurqygkjceh9wc3ggf3uddz334q.mp4")
+                    img(src="/assets/images/icons/btn-video.png")
+        section.screen.second
+            .owl-carousel
+                mixin CarouselItem()
+                    .carousel-item
+                        .logo-lines
+                            .line
+                            .line
+                            .line
+                        img.bg(src="/assets/images/bg/3.png")
+                        .text
+                            h2 География применения
+                            a.more Подбробнее
+                        .cursor
+                +CarouselItem()
+                +CarouselItem()
+                +CarouselItem()
+                +CarouselItem()
+                +CarouselItem()
+            .carousel-navs
+                .current 1
+                .line.sm
+                .total 1
+                .line.lg
+                .btns
+                    button.prev
+                    button.next
+        section.screen.products-carousel
+            .logo-wrapper
+                img(src="/assets/images/logo2.png")
+            .carousel-navs.black
+                .nav-title Продукция
+                .line.lg
+                .current 1
+                .line.sm
+                .total 1
+
+                .btns
+                    button.prev
+                    button.next
+            .owl-carousel
+                mixin ProductItem(index)
+                    .product-item
+                        .text
+                            p Опытно-конструкторские разработки завода «Р-Фактор» учитывают многолетний опыт мирового машиностроения по созданию лучших образцов нефтегазового оборудования, а собственное производство обеспечивает высокие показатели технического уровня, качества и надежности выпускаемой продукции.
+                        .image
+                            img(src="/assets/images/bg/car.png")
+                        .text
+                            .number= index
+                            p Разработано и выпущено оборудования для ГРП
+                +ProductItem(1)
+                +ProductItem(2)
+                +ProductItem(3)
+                +ProductItem(4)
+                +ProductItem(5)
+                +ProductItem(6)
+            .navs
+                a(href="#" data-index="0").active Оборудование для ГРП
+                a(href="#" data-index="1") Оборудование для заканчивания скважин
+                a(href="#" data-index="2") Насосы плунжерные гидравлические
+                a(href="#" data-index="3") Устьевое оборудование
+                a(href="#" data-index="4") Переводники, муфты, патрубки
+                a(href="#" data-index="5") Резино технические изделия
+        section.press-center
+            .carousel-navs
+                .nav-title Пресс-центр
+                .line.lg
+                .current 1
+                .line.sm
+                .total 1
+                .btns
+                    button.prev
+                    button.next
+            .press-wrapper.owl-carousel
+                mixin PressItem()
+                    .item
+                        .text
+                            .date
+                                |Сентябрь
+                                .year 2023
+                            .item-title Заголовок материала в две строки, можно и в три строки, можно и в четыре
+                            a.more(href="#") Новости компании
+                        img.bg(src="/assets/images/bg/news-bg.jpg")
+                +PressItem()
+                +PressItem()
+                +PressItem()
+                +PressItem()
+                +PressItem()
+                +PressItem()
+        section.projects
+            .carousel-navs
+                .nav-title Реализованные проекты
+                .line.lg
+                .current 1
+                .line.sm
+                .total 1
+                .btns
+                    button.prev
+                    button.next
+            .project-wrapper.owl-carousel
+                mixin ProjectItem()
+                    a(href="#").item
+                        img.bg(src="/assets/images/bg/project-bg.jpg")
+                        .text
+                            img.logo-marker(src="/assets/images/logo3.png")
+                            span.more Узнать подробнее
+                        .logo-lines
+                            .line
+                            .line
+                            .line
+                +ProjectItem()
+                +ProjectItem()
+                +ProjectItem()
+                +ProjectItem()
+        section.partners
+            .marquee3k(data-speed="0.25" data-pausable="false")
+                .partners-list
+                    img(src="/assets/images/partners/1.png")
+                    img(src="/assets/images/partners/2.png")
+                    img(src="/assets/images/partners/3.png")
+                    img(src="/assets/images/partners/4.png")
+                    img(src="/assets/images/partners/5.png")
+                    img(src="/assets/images/partners/6.png")
+                    img(src="/assets/images/partners/7.png")
+                    img(src="/assets/images/partners/8.png")
+                    img(src="/assets/images/partners/9.png")
+                    img(src="/assets/images/partners/10.png")
+                    img(src="/assets/images/partners/11.png")
+                    img(src="/assets/images/partners/12.png")
+        footer
+            .col
+                img.logo-marker(src="/assets/images/logo4.png")
+                a.contacts-link(href="tel:+7 (3466) 311-926") +7 (3466) 311-926
+                a.contacts-link(href="mailto:info@r-faktor.ru") info@r-faktor.ru
+                a.btn-link(href="#")
+                    |Сотрудничать
+                    img(src="/assets/images/icons/arrow.png")
+            .col
+                a.menu-title(href="#") Компания
+                a.menu-link(href="#") О компании
+                a.menu-link(href="#") Производственные мощности
+                a.menu-link(href="#") Корпоративная культура
+                a.menu-link(href="#") Вакансии
+                a.menu-link(href="#") Пресс-центр
+                a.menu-link(href="#") Отзывы
+            .col
+                a.menu-title(href="#") Продукция
+                a.menu-link(href="#") Оборудование для ГРП
+                a.menu-link(href="#") Оборудование для заканчивания скважин
+                a.menu-link(href="#") Насосы плунжерные гидравлические
+                a.menu-link(href="#") Устьевое оборудование
+                a.menu-link(href="#") Переводники, муфты, патрубки
+                a.menu-link(href="#") Резино технические изделия
+            .col
+                a.policy Ограничение ответственности
+                .soc-list
+                    a.link(target="_black" href="#")
+                        img(src="/assets/images/icons/soc/dzen.png")
+                    a.link(target="_black" href="#")
+                        img(src="/assets/images/icons/soc/rutube.png")
+                    a.link(target="_black" href="#")
+                        img(src="/assets/images/icons/soc/tg.png")
+                    a.link(target="_black" href="#")
+                        img(src="/assets/images/icons/soc/vk.png")
+                span (с) 2023 ООО «Р-Фактор»
+                button.btn-up
+
 
         include core/scripts
