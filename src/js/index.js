@@ -4,6 +4,8 @@ function Core()
 {
     InitOwlCarousel();
     InitMarquee();
+    InitParticles();
+    InitSpincrement();
 
     SetTabSwitcher();
     SetLangSwitcher();
@@ -11,6 +13,7 @@ function Core()
     SetNavbar();
     SetCursor();
     SetBtnUp();
+    SetPageNav();
 }
 
 function SetTabSwitcher()
@@ -191,6 +194,89 @@ function InitOwlCarousel()
         mouseDrag: false,
         touchDrag: false,
     })
+
+    let topPositionsCarousel = $('section.top-positions .owl-carousel');
+
+    topPositionsCarousel.on("initialized.owl.carousel", function (e) {
+        InitCarouselNav(e, topPositionsCarousel)
+    }).owlCarousel({
+        items: 1,
+        slideBy: 1,
+        dots: false,
+        mouseDrag: false,
+        touchDrag: false,
+        autoHeight: true
+    })
+
+    let historyCarousel = $('section.history .owl-carousel');
+
+    historyCarousel.on("initialized.owl.carousel", function (e) {
+        $('section.history .year').on('click', function (e) {
+            let index = $(this).data('index');
+            historyCarousel.trigger('to.owl.carousel', index);
+
+            $('section.history .year').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('section.history .prev').on('click', function (e) {
+            historyCarousel.trigger('prev.owl.carousel');
+
+            if ($('section.history .year.active').prev().length > 0)
+                $('section.history .year.active').removeClass('active').prev().addClass('active')
+        })
+
+        $('section.history .next').on('click', function (e) {
+            historyCarousel.trigger('next.owl.carousel');
+
+            if ($('section.history .year.active').next().length > 0)
+                $('section.history .year.active').removeClass('active').next().addClass('active')
+        })
+    }).owlCarousel({
+        items: 1,
+        slideBy: 1,
+        dots: false,
+        mouseDrag: false,
+        touchDrag: false,
+        autoHeight: true
+    })
+
+    let strategyCarousel = $('section.strategy .owl-carousel')
+
+    strategyCarousel.on("initialized.owl.carousel", function (e) {
+        InitCarouselNav(e, strategyCarousel);
+
+        $('section.strategy .btn-wrapper button').on('click', function (e) {
+            let index = $(this).data('index');
+            strategyCarousel.trigger('to.owl.carousel', index);
+
+            $('section.strategy .btn-wrapper button').removeClass('active');
+            $(this).addClass('active');
+
+            $(this).closest('section').find('.carousel-navs').find('.current').text(index + 1);
+        });
+    }).owlCarousel({
+        items: 1,
+        slideBy: 1,
+        dots: false,
+        mouseDrag: false,
+        touchDrag: false,
+        autoHeight: true
+    })
+
+    let rewardsCarousel = $('section.rewards .owl-carousel');
+
+    rewardsCarousel.on("initialized.owl.carousel", function (e) {
+        InitCarouselNav(e, rewardsCarousel);
+    }).owlCarousel({
+        items: 3,
+        slideBy: 3,
+        dots: false,
+        mouseDrag: false,
+        touchDrag: false,
+        autoHeight: true,
+        margin: 80
+    })
 }
 
 function InitCarouselNav(event, node)
@@ -235,5 +321,85 @@ function SetBtnUp()
             behavior: "smooth"
         });
     })
+}
 
+function SetPageNav()
+{
+    $(window).on('scroll', function (e) {
+        let mainHeight = $('section.main').height();
+
+        if (window.scrollY > mainHeight - 100)
+        {
+            $('.page-nav').addClass('black')
+        }
+        else
+        {
+            if ($('.page-nav').hasClass('black'))
+            {
+                $('.page-nav').removeClass('black')
+            }
+        }
+
+        let buttons = $('.page-nav .navs button');
+
+        for (let button of buttons)
+        {
+            let nodeSelector = $(button).attr('nav');
+
+            if (window.scrollY < $(nodeSelector).position().top + 100)
+            {
+                $('.page-nav .navs button').removeClass('active');
+                $(button).addClass('active')
+                return;
+            }
+        }
+    });
+
+    $('.page-nav .navs button').on('click', function (e) {
+        let nodeSelector = $(this).attr('nav');
+        window.scrollTo({
+            top: $(nodeSelector).position().top,
+            behavior: "smooth"
+        });
+    })
+}
+
+function InitParticles()
+{
+    particlesJS.load('particles-js', 'assets/js/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+}
+
+function InitSpincrement()
+{
+    $(window).scroll(function (e) {
+        if (!$('.spincrement-wrapper').offset())
+        {
+            return
+        }
+
+        let wrappers = $('.spincrement-wrapper');
+
+        for (let wrapper of wrappers)
+        {
+            if ($(wrapper).hasClass('active'))
+            {
+                continue
+            }
+
+            let spincrementTop = $(wrapper).offset().top;
+            let windowBottom = $(window).scrollTop() + $(window).height();
+
+            if (windowBottom > spincrementTop)
+            {
+                $(wrapper).find('.spincrement').spincrement({
+                    duration: 4000,
+                    thousandSeparator: ' '
+                });
+
+                $(wrapper).addClass('active');
+            }
+        }
+    })
 }

@@ -15,7 +15,7 @@ let path = {
         html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`],
         pug: `${sourceFolder}/pug/*.pug`,
         css: [`${sourceFolder}/scss/style.scss`, `${sourceFolder}/scss/bundle.scss`, `${sourceFolder}/scss/response.scss`],
-        js: [`${sourceFolder}/js/*.js`],
+        js: [`${sourceFolder}/js/*.+(js|json)`],
         img: `${sourceFolder}/images/**/*.+(png|jpg|gif|ico|svg|webp)`,
         fonts: `${sourceFolder}/fonts/*.ttf`
     },
@@ -23,7 +23,7 @@ let path = {
         html: `${sourceFolder}/**/*.html`,
         pug: `${sourceFolder}/**/*.pug`,
         css: `${sourceFolder}/scss/**/*.scss`,
-        js: `${sourceFolder}/js/**/*.js`,
+        js: `${sourceFolder}/js/**/*.+(js|json)`,
         img: `${sourceFolder}/images/**/*.+(png|jpg|gif|ico|svg|webp)`,
     },
     clean: `./${projectFolder}/`

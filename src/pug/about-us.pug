@@ -1,0 +1,175 @@
+include core/mixins
+include core/navbar
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include core/head
+    body
+        +Navbar('black')
+        #particles-js
+        section.about
+            .container
+                .breadcrumb
+                    a(href="") Главная
+                    a(href="") Компания
+                    a(href="").active О нас
+                h1.title Р-Фактор
+                p.subtitle Завод Р-Фактор является одним из крупнейших российских производителей импортозамещающего оборудования для нефтесервисных и нефтедобывающих компаний.
+            img.banner(src="/assets/images/banner/1.jpg")
+            .container
+                .spincrement-wrapper
+                    .spincrement-item
+                        b
+                            span.spincrement 2100
+                            span +
+                        .spincrement-title Оборудования разработано и изготовлено
+                    .spincrement-item
+                        b
+                            span.spincrement 30
+                            span +
+                        .spincrement-title Перспективного оборудования, в том числе с ЧПУ
+        section.top-positions
+            .carousel-navs
+                .nav-title Лидирующие позиции
+                .line.lg
+                .current 1
+                .line.sm
+                .total 2
+                .btns
+                    button.prev
+                    button.next
+            .owl-carousel
+                .container
+                    p.subtitle Вся деятельность завода «Р-Фактор» сосредоточена на выпуске продукции стопроцентного качества, потому что мы осознаем, что на нас лежит большая ответственность за безопасность сотрудников наших партнеров и природы. Мы гордимся тем, что на нас с уверенностью полагаются крупнейшие предприятия, имеющие высокие требования и стандарты.
+                    h2.title.sm Регионы применения нашей продукции
+                .container
+                    p.subtitle Мы благодарим стратегических партнеров за высокую оценку деятельности предприятия, профессионального уровня сотрудников и качества нашей работы.
+                    h2.title.sm Основные заказчики
+                .container
+                    p.subtitle 3 Вся деятельность завода «Р-Фактор» сосредоточена на выпуске продукции стопроцентного качества, потому что мы осознаем, что на нас лежит большая ответственность за безопасность сотрудников наших партнеров и природы. Мы гордимся тем, что на нас с уверенностью полагаются крупнейшие предприятия, имеющие высокие требования и стандарты.
+        section.media-video
+            .video-text Оборудования, не имеющее аналогов в России, спроектированное и изготовлено на завозе «Р-Фактор»
+            a.video-link.btn-video(data-video="http://braintechnology.ru/upload/iblock/ab1/pfy7kyurqygkjceh9wc3ggf3uddz334q.mp4")
+            .bg-video
+                video(src="http://braintechnology.ru/upload/iblock/ab1/pfy7kyurqygkjceh9wc3ggf3uddz334q.mp4" autoplay="" muted="" loop="")
+        section.history
+            .carousel-navs
+                .nav-title История
+                .line.lg
+            .container
+                p.subtitle В 2014-2015 годах в России сложилась такая экономическая ситуация, в результате которой в связи с санкциями обслуживание иностранных флотов ГРП было невозможно. Это послужило толчком для принятия оперативного решения о создании компании по производству импортозамещающего оборудования.
+                .owl-carousel
+                    .slide
+                        .image
+                            img(src="/assets/images/history/1.jpg")
+                        .desc
+                            b 2016
+                            p Налажен выпуск насосных установок высокого давления (гидравлическая и механическая части), оборудованных тяжелым внедорожным шасси КамАЗ-6560 с колесной формулой 8х8.
+                    .slide
+                        .image
+                            img(src="/assets/images/history/1.jpg")
+                        .desc
+                            b 2017
+                            p Налажен выпуск насосных установок высокого давления (гидравлическая и механическая части), оборудованных тяжелым внедорожным шасси КамАЗ-6560 с колесной формулой 8х8.
+                    .slide
+                        .image
+                            img(src="/assets/images/history/1.jpg")
+                        .desc
+                            b 2018
+                            p Налажен выпуск насосных установок высокого давления (гидравлическая и механическая части), оборудованных тяжелым внедорожным шасси КамАЗ-6560 с колесной формулой 8х8.
+                    .slide
+                        .image
+                            img(src="/assets/images/history/1.jpg")
+                        .desc
+                            b 2019
+                            p Налажен выпуск насосных установок высокого давления (гидравлическая и механическая части), оборудованных тяжелым внедорожным шасси КамАЗ-6560 с колесной формулой 8х8.
+                    .slide
+                        .image
+                            img(src="/assets/images/history/1.jpg")
+                        .desc
+                            b 2020
+                            p Налажен выпуск насосных установок высокого давления (гидравлическая и механическая части), оборудованных тяжелым внедорожным шасси КамАЗ-6560 с колесной формулой 8х8.
+                    .slide
+                        .image
+                            img(src="/assets/images/history/1.jpg")
+                        .desc
+                            b 2021
+                            p Налажен выпуск насосных установок высокого давления (гидравлическая и механическая части), оборудованных тяжелым внедорожным шасси КамАЗ-6560 с колесной формулой 8х8.
+                .wrapper-nav
+                    .history-nav
+                        button.year.active(data-index="0") 2016
+                        button.year(data-index="1") 2017
+                        button.year(data-index="2") 2018
+                        button.year(data-index="3") 2019
+                        button.year(data-index="4") 2020
+                        button.year(data-index="5") 2021
+                    .btns
+                        button.prev
+                        button.next
+        section.strategy
+            .carousel-navs
+                .nav-title Стратегия компании
+                .line.lg
+                .current 1
+                .line.sm
+                .total 1
+                .btns
+                    button.prev
+                    button.next
+            .container
+                p.subtitle Непрерывный процессе разработки и проектирования перспективного оборудования, проводя предварительные испытания и предлагая новые решения для потребителей.
+
+            .owl-carousel
+                .banner
+                    img.bg(src="/assets/images/banner/2.jpg")
+                    b Промышленная безопасность и охрана труда
+                    a.more Подробнее
+                .banner
+                    img.bg(src="/assets/images/banner/2.jpg")
+                    b Политика в области качества
+                    a.more Подробнее
+                .banner
+                    img.bg(src="/assets/images/banner/2.jpg")
+                    b Корпоративная социальная ответственность
+                    a.more Подробнее
+                .banner
+                    img.bg(src="/assets/images/banner/2.jpg")
+                    b Охрана окружающей среды и экологии
+                    a.more Подробнее
+            .btn-wrapper
+                button.active(data-index="0") Промышленная безопасность и охрана труда
+                button(data-index="1") Политика в области качества
+                button(data-index="2") Корпоративная социальная ответственность
+                button(data-index="3") Охрана окружающей среды и экологии
+        section.rewards
+            .carousel-navs
+                .nav-title Награды
+                .line.lg
+                .current 1
+                .line.sm
+                .total 1
+                .btns
+                    button.prev
+                    button.next
+            .container
+                p.subtitle Система мотивации для компании, дополнительный стимул для реализации потенциала сотрудников.
+            .slider
+                .owl-carousel
+                    .item
+                        img(src="/assets/images/rewards/1.png")
+                    .item
+                        img(src="/assets/images/rewards/1.png")
+                    .item
+                        img(src="/assets/images/rewards/1.png")
+                    .item
+                        img(src="/assets/images/rewards/1.png")
+                    .item
+                        img(src="/assets/images/rewards/1.png")
+        include core/footer
+
+        include core/scripts
