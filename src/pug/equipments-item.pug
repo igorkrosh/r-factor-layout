@@ -1,0 +1,48 @@
+include core/mixins
+include core/navbar
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include core/head
+    body
+        +Navbar('black')
+        #particles-js
+        section.equipments-item
+            .container
+                .breadcrumb
+                    a(href="") Главная
+                    a(href="") Продукция
+                    a(href="") Оборудование для ГРП
+                    a(href="").active Установка песко-смесительная
+                .title-wrapper
+                    h1.title Установка <br> песко-смесительная
+                    button.btn-arrow Задать вопрос специалисту
+                    img(src="/assets/images/bg/car2.png")
+        section.equipments-details
+            .container
+                .row
+                    .col
+                        .desc
+                            b Назначение
+                            p Установка предназначена для приготовления рабочих составов при пескоструйной перфорации и гидроразрыва пласта
+                        .desc
+                            b Особенности
+                            p Возможность изготовления вертолетного исполнения; <br> использование узлов и агрегатов собственного производства, проверенных временем.
+                        .desc
+                            b Характеристики
+                            p Объем ванны, м3 - 0,28; <br> Давление на выходе МПа - 5; <br> Максимальные обороты колеса, об/мин - 1300. <br>Аналоги CROWN, ERIMAER,
+                    .col
+                        .main-image
+                            img(src="/assets/images/equipments/2.jpg")
+                        .grid
+                            img(src="/assets/images/equipments/2.jpg")
+                            img(src="/assets/images/equipments/2.jpg")
+                            img(src="/assets/images/equipments/2.jpg")
+
+    include core/footer
+    include core/scripts

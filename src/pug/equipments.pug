@@ -1,0 +1,62 @@
+include core/mixins
+include core/navbar
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include core/head
+    body
+        +Navbar('black')
+        #particles-js
+        section.equipments
+            .container
+                .breadcrumb
+                    a(href="") Главная
+                    a(href="") Продукция
+                    a(href="").active Оборудование для ГРП
+                h1.title Оборудование для ГРП
+                form.filter-wrapper
+                    .select-wrapper
+                        select
+                            option Категория 1
+                            option Категория 2
+                            option Категория 3
+                            option Категория 4
+                            option Категория 5
+                    .select-wrapper
+                        select
+                            option Подкатегория 1
+                            option Подкатегория 2
+                            option Подкатегория 3
+                            option Подкатегория 4
+                            option Подкатегория 5
+                    .submit
+                        button
+                .equipments-grid
+                    .item
+                        img(src="/assets/images/equipments/1.jpg")
+                        b Установка песко-смесительная
+                        a.more Подробнее
+                    .item
+                        img(src="/assets/images/equipments/1.jpg")
+                        b Установка песко-смесительная
+                        a.more Подробнее
+                    .item
+                        img(src="/assets/images/equipments/1.jpg")
+                        b Установка песко-смесительная
+                        a.more Подробнее
+                .btn-wrapper
+                    button Оборудование для ГРП
+                    button Оборудование для заканчивания скважин
+                    button Насосы плунжерные гидравлические
+                    button Устьевое оборудование
+                    button Переводники, муфты, патрубки
+                    button Резино-технические изделия
+        +Projects()
+        include core/footer
+
+        include core/scripts

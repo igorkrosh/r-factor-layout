@@ -16,3 +16,31 @@ mixin InputRadio(name, label)
 mixin BtnMenu()
     button.btn__menu
         span
+
+mixin ProjectItem()
+    a(href="#").item
+        img.bg(src="/assets/images/bg/project-bg.jpg")
+        .text
+            img.logo-marker(src="/assets/images/logo3.png")
+            span.more Узнать подробнее
+        .logo-lines
+            .line
+            .line
+            .line
+
+mixin Projects()
+    section.projects
+        .carousel-navs
+            .nav-title Реализованные проекты
+            .line.lg
+            .current 1
+            .line.sm
+            .total 1
+            .btns
+                button.prev
+                button.next
+        .project-wrapper.owl-carousel
+            +ProjectItem()
+            +ProjectItem()
+            +ProjectItem()
+            +ProjectItem()
