@@ -404,7 +404,6 @@ header
 
 section.main
 {
-    padding-top: 230px;
     display: flex;
     align-items: flex-end;
 
@@ -1475,11 +1474,6 @@ header.black
     overflow: hidden;
 }
 
-section.about
-{
-    padding-top: 230px;
-}
-
 
 .banner
 {
@@ -1879,8 +1873,6 @@ form.filter-wrapper
 
 section.equipments
 {
-    padding-top: 230px;
-
     .equipments-grid
     {
         margin-top: 70px;
@@ -1942,8 +1934,6 @@ section.equipments
 
 section.equipments-item
 {
-    padding-top: 230px;
-
     .title-wrapper
     {
         position: relative;
@@ -1957,8 +1947,6 @@ section.equipments-item
             top: 0;
         }
     }
-
-
 }
 
 .btn-arrow
@@ -2095,8 +2083,6 @@ section.presentations
 
 section.job-page
 {
-    padding-top: 230px;
-
     .jobs-wrapper
     {
         padding-top: 100px;
@@ -2155,4 +2141,13 @@ section.job-page
     }
 }
 
+.pd-h
+{
+    padding-top: 230px;
+}
+
+section.contacts-page
+{
+
+}
 
