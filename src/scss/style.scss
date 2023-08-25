@@ -2092,3 +2092,67 @@ section.presentations
     }
 
 }
+
+section.job-page
+{
+    padding-top: 230px;
+
+    .jobs-wrapper
+    {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.dropdown
+{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    .d-header
+    {
+        font-size: 30px;
+        font-weight: 600;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .d-body
+    {
+        font-size: 20px;
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s;
+    }
+
+    .d-header:after
+    {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        width: 23px;
+        height: 44px;
+        background: url("/assets/images/icons/dropdown-arrow.png");
+        margin: auto;
+        transition: 0.5s;
+    }
+}
+
+.dropdown.active
+{
+    .d-body
+    {
+        max-height: 2000px;
+    }
+
+    .d-header:after
+    {
+        transform: rotate(90deg);
+    }
+}
+
+

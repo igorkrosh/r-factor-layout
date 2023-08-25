@@ -14,6 +14,7 @@ function Core()
     SetCursor();
     SetBtnUp();
     SetPageNav();
+    SetDropdown();
 }
 
 function SetTabSwitcher()
@@ -401,5 +402,12 @@ function InitSpincrement()
                 $(wrapper).addClass('active');
             }
         }
+    })
+}
+
+function SetDropdown()
+{
+    $('.dropdown').on('click', function () {
+        $(this).toggleClass('active');
     })
 }

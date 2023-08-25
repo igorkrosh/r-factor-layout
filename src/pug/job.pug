@@ -1,0 +1,32 @@
+include core/mixins
+include core/navbar
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include core/head
+    body
+        +Navbar('black')
+        #particles-js
+        section.job-page
+            .container
+                .breadcrumb
+                    a(href="") Главная
+                    a(href="") Компания
+                    a(href="").active О нас
+                h1.title Вакансии
+                p.subtitle Квалифицированные сотрудники, нацеленные на постоянное совершенствование, без преувеличения, — золотой фонд завода «Р-Фактор», который держит курс на развитие и модернизацию производства, расширение рынка сбыта и повышение качества выпускаемой продукции.
+            img.banner(src="/assets/images/banner/3.jpg")
+            .container.jobs-wrapper
+                .dropdown
+                    .d-header Оператор токарных станков ЧПУ
+                    .d-body
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus consequuntur cumque delectus doloremque doloribus dolorum eligendi, et expedita id magni maiores nam placeat quia quo rerum, sapiente tenetur vero.
+
+
+        include core/footer
+        include core/scripts
