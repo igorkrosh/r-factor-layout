@@ -277,6 +277,19 @@ function InitOwlCarousel()
         touchDrag: false,
         autoHeight: true,
         margin: 80
+    });
+
+    let facilitiesCarousel = $('section.production-facilities .owl-carousel');
+
+    facilitiesCarousel.on("initialized.owl.carousel", function (e) {
+        InitCarouselNav(e, facilitiesCarousel);
+    }).owlCarousel({
+        items: 3,
+        slideBy: 3,
+        dots: false,
+        mouseDrag: false,
+        touchDrag: false,
+        autoHeight: true,
     })
 }
 

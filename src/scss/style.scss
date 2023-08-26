@@ -2304,3 +2304,47 @@ section.pagetitle.sm
         }
     }
 }
+
+section.production-facilities
+{
+    padding-top: 65px;
+    .owl-carousel
+    {
+        border-bottom: 1px solid black;
+    }
+
+    .owl-item:last-child
+    {
+        .item .desc
+        {
+            border-right: none;
+        }
+    }
+
+    .item
+    {
+        .img
+        {
+            width: 100%;
+            height: 580px;
+
+
+            img
+            {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .desc
+        {
+            font-size: 27px;
+            font-style: italic;
+            padding: 35px 60px;
+            border-right: 1px solid black;
+        }
+    }
+
+
+}
