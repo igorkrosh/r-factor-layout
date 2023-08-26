@@ -1233,6 +1233,31 @@ footer
     }
 }
 
+.btn-link.red
+{
+    color: #d1050c;
+}
+
+.btn-link.red:after
+{
+    border-color: #d1050c;
+}
+
+.btn-link.red:hover:after
+{
+    background: #d1050c;
+}
+
+.btn-link.red:hover
+{
+    color: white;
+}
+
+.btn-link.center
+{
+    justify-content: center;
+}
+
 .btn-link
 {
     font-size: 2.7rem;
@@ -1241,6 +1266,9 @@ footer
     z-index: 1;
     display: flex;
     align-items: center;
+    color: #ffffff;
+    border: none;
+    background: none;
 
     img
     {
@@ -2148,6 +2176,64 @@ section.job-page
 
 section.contacts-page
 {
+    padding-bottom: 150px;
 
+    .contacts-wrapper
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .form-contacts
+        {
+            width: 65%;
+            display: grid;
+            grid-template-columns: 48% 48%;
+            grid-gap: 20px;
+            padding-right: 25px;
+
+            textarea
+            {
+                grid-column: span 2;
+                height: 170px;
+                resize: none;
+            }
+
+            input, textarea
+            {
+                background: #f3f3f3;
+                border: none;
+                padding: 10px 20px;
+                font-family: Calibri;
+                font-size: 18px;
+                outline: none;
+            }
+
+            .btn-link
+            {
+                font-size: 21px;
+            }
+
+        }
+
+        .info
+        {
+            width: 35%;
+
+            .row
+            {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 35px;
+                font-size: 18px;
+            }
+        }
+
+    }
 }
 
+.container.sm
+{
+    max-width: 1200px;
+    padding: 0 25px;
+}

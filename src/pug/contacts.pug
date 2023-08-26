@@ -20,7 +20,34 @@ html(lang="ru")
                     a(href="").active Презентации
                 h1.title Контакты
                 p.subtitle Вы можете связаться с нами, воспользовавшись формой обратной связи, либо по указанным контактным телефонам и адресу электронной почты.
-
-
+        section.contacts-page
+            .container.sm
+                .contacts-wrapper
+                    form.form-contacts
+                        input(placeholder="Ваше имя")
+                        input(placeholder="Ваш e-mail")
+                        input(placeholder="Номер телефона")
+                        input(placeholder="Номер телефона")
+                        textarea(placeholder="Текст обращения")
+                        button.btn-link.red.center Отправить
+                    .info
+                        .row
+                            b Полное название компании:
+                            span ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «Р-ФАКТОР»
+                        .row
+                            b Генеральный директор:
+                            span Иванько Владимир Сергеевич
+                        .row
+                            b Юридический адрес:
+                            span 6286091, ХМАО-ЮГРА, г. Нижневартовск ул. Индустриальная, владение 65, строение 7
+                        .row
+                            b Телефон бухгалтерия:
+                            span +7 (3466) 31-19-38
+                        .row
+                            b Телефон производство:
+                            span +7 (3466) 31-19-37
+                        .row
+                            b E-mail:
+                            span info@r-faktor.ru
         include core/footer
         include core/scripts
