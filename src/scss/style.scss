@@ -2248,6 +2248,26 @@ section.contacts-page
         margin-top: 0;
         margin-bottom: 40px;
     }
+
+    ul
+    {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 40px;
+
+        li:before
+        {
+            content: '-';
+            display: inline-block;
+            margin-right: 25px;
+        }
+
+        li
+        {
+            margin-bottom: 5px;
+        }
+    }
 }
 
 section.pagetitle.sm
@@ -2308,6 +2328,7 @@ section.pagetitle.sm
 section.production-facilities
 {
     padding-top: 65px;
+
     .owl-carousel
     {
         border-bottom: 1px solid black;
